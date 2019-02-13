@@ -1,3 +1,5 @@
+=begin
+### this is not an efficient way to do it, it needs to repeat according to how many birds and how many features we have, it doesn't work (unrealistic to work) when the data is massive.
 def nyc_pigeon_organizer(data)
   pigeon_list = {}
   data.collect do |info_type, info|
@@ -12,4 +14,18 @@ def nyc_pigeon_organizer(data)
     end
   end
   pigeon_list
+end
+
+=end
+
+def nyc_pigeon_organizer(data)
+  data.collect do |categories, hashes|
+ hashes.collect do |features, names|
+  names.collect do |name|
+   pigeon_list[name] ||= {}
+   pigeon_list[name][categories] ||= []
+   pigeon_list[name][categories]  << features.to_s
+  end
+ end
+ end
 end
