@@ -1,5 +1,6 @@
 def nyc_pigeon_organizer(data)
   pigeon_list = {}
-  data.collect
-end
+  data.collect do |colors, color|
+    color
+  end
 end
