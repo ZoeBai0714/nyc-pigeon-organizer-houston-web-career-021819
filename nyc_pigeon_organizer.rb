@@ -19,7 +19,7 @@ end
 =end
 
 def nyc_pigeon_organizer(data)
-  pigeon_list = []
+  pigeon_list = {}
   data.collect do |categories, hashes|
     hashes.collect do |features, names|
     names.collect do |name|
