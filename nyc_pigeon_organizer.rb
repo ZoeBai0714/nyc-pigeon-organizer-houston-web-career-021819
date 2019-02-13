@@ -19,12 +19,13 @@ end
 =end
 
 def nyc_pigeon_organizer(data)
+  pigeon_list = []
   data.collect do |categories, hashes|
- hashes.collect do |features, names|
-  names.collect do |name|
-   pigeon_list[name] ||= {}
-   pigeon_list[name][categories] ||= []
-   pigeon_list[name][categories]  << features.to_s
+    hashes.collect do |features, names|
+    names.collect do |name|
+    pigeon_list[name] ||= {}
+    pigeon_list[name][categories] ||= []
+    pigeon_list[name][categories]  << features.to_s
   end
  end
  end
