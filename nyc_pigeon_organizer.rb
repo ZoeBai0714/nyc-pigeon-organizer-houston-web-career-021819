@@ -1,6 +1,6 @@
 def nyc_pigeon_organizer(data)
   pigeon_list = {}
- data.collect do |info_type, info|
+  data.collect do |info_type, info|
     if info_type == :color
       pigeon_list["Theo"]={}
       pigeon_list["Theo"][info_type] = []
@@ -11,4 +11,5 @@ def nyc_pigeon_organizer(data)
      end
     end
   end
+  pigeon_list
 end
